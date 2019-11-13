@@ -35,7 +35,6 @@
 
 <script>
 import axios from "axios";
-import config from "./../config/config";
 
 import TarefaSalvar from "./TarefaSalvar.vue";
 import TarefasListaIten from "./TarefasListaIten.vue";
@@ -60,7 +59,7 @@ export default {
   },
   methods: {
     criarTarefa(tarefa) {
-      axios.post(`${config.apiURL}/tarefas/`, tarefa).then(response => {
+      axios.post(process.env.VUE_APP_URLAPI, tarefa).then(response => {
         this.tarefas.push(response.data);
         this.resetar();
       });
@@ -93,7 +92,7 @@ export default {
       this.tarefaSelecionada = undefined;
       this.exibirFormulario = false;
     },
-    exibirFormularioCriarTarefa(event){
+    exibirFormularioCriarTarefa(){
         if(this.tarefaSelecionada){
             this.tarefaSelecionada = undefined
             return 

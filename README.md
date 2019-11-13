@@ -17,12 +17,13 @@
 
 ### Variáveis da aplicação
 
-* VUE_APP_URLAPI = URL da API
+* VUE_APP_URLAPI = URL da API(http://localhost:{{MYPORT}}/api/tarefas/)
 * STATIC_ROOT = pasta na qual os arquivos estáticos serão armazenados
 * STATICFILES_DIRS = lista de pastas em que o Django procurará arquivos estáticos adicionais além da pasta static
 * CORS_ORIGIN_ALLOW_ALL = bloqueia o cors 
 * STATIC_URL = local da pasta estática
 * ALLOWED_HOSTS =  habilita quem pode acessar a aplicação
+* CORS_ORIGIN_ALLOW_ALL = habilita ou bloqueia o uso cors
 
 ### Desenvolvido por
 
