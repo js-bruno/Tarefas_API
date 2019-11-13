@@ -25,7 +25,7 @@ SECRET_KEY = 't(@#7!$j2!_2kbb^kb126a#naxju9xmpa+cd!x@^z85f(+21ii'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ['DEBUG'] == True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS'].split(',')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Application definition
@@ -40,8 +40,6 @@ INSTALLED_APPS = [
     'tarefas',
     'rest_framework',
     'corsheaders',
-
-
 
 ]
 STATICFILES_DIRS = [
@@ -59,10 +57,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = [
-    "http://localhost:8096",
-    "http://localhost:8006",
-]
+# CORS_ORIGIN_WHITELIST = [
+#     "http://localhost:8096",
+#     "http://localhost:8006",
+# ]
 
 ROOT_URLCONF = 'api_rest.urls'
 
@@ -90,8 +88,12 @@ WSGI_APPLICATION = 'api_rest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ['POSTGRESQL_DATABASE'],
+        'USER': os.environ['POSTGRESQL_USER'],
+        'PASSWORD': os.environ['POSTGRESQL_PASSWORD'],
+        'HOST': os.environ['POSTGRESQL_HOST'],
+        'PORT': os.environ['POSTGRESQL_PORT']
     }
 }
 
@@ -118,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 

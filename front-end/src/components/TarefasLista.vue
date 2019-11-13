@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div class="col-sm-10">
-        <h1 class="font-weight-light">Lista de Tarefas</h1>
+        <h1 class="font-weight-light">Lista de Tarefas {{versao}} </h1>
       </div>
       <div class="col-sm-2">
         <button class="btn btn-primary float-right" @click="exibirFormularioCriarTarefa">
@@ -49,7 +49,8 @@ export default {
     return {
       tarefas: [],
       exibirFormulario: false,
-      tarefaSelecionada: undefined
+      tarefaSelecionada: undefined,
+      versao: '1.0.0'
     };
   },
   created() {
