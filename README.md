@@ -14,19 +14,19 @@
 
  * VueJS - Framework JS
 
-### Variáveis da aplicação
+### Envs da aplicação
 
 * Front-end
-    * VUE_APP_URLAPI = 'http://endereco.com.br/api/tarefas/' **Url Da Api(Back-end)**
-    * VUE_APP_VERSAOAPP = '1.0.0'  **Versão Da Aplicação**
+    * VUE_APP_URLAPI=http://endereco.com.br/api/tarefas/
+    * VUE_APP_VERSAOAPP=1.0.0
 * Back-end
-    * ALLOWED_HOSTS='*' **Habilita quem pode acessar a aplicação**
-    * DEBUG=True **Habilita a depuração do programa**
-    * POSTGRESQL_DATABASE='Tarefas' **Nome do banco de dados**
-    * POSTGRESQL_USER='User'**Nome de Usuario do banco de dados**
-    * POSTGRESQL_PASSWORD='123' **Senha do do banco de dados**
-    * POSTGRESQL_HOST='NomeDoServço' **Onde o bancode sera hospedado**
-    * POSTGRESQL_PORT='5432' **Porta do banco de dados**
+    * ALLOWED_HOSTS= *
+    * DEBUG=True 
+    * POSTGRESQL_DATABASE=tarefas
+    * POSTGRESQL_USER=User
+    * POSTGRESQL_PASSWORD=e^$gofA!Z%6@
+    * POSTGRESQL_HOST=nomedoservico
+    * POSTGRESQL_PORT=5432
 ### Desenvolvido por
 
 * GeoMK Desenvolvimento de Programas De Computador
