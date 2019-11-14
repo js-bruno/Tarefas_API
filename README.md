@@ -17,16 +17,16 @@
 ### Variáveis da aplicação
 
 * Front-end
-    * VUE_APP_URLAPI = URL da API(http://endereco.com.br:{{MYPORT}}/api/tarefas/)
-    * VUE_APP_VERSAOAPP = Versão da aplicação 
+    * VUE_APP_URLAPI = 'http://endereco.com.br/api/tarefas/' **Url Da Api(Back-end)**
+    * VUE_APP_VERSAOAPP = '1.0.0'  **Versão Da Aplicação**
 * Back-end
-    * ALLOWED_HOSTS =  Habilita quem pode acessar a aplicação
-    * DEBUG = Depuração da aplicação
-    * POSTGRESQL_DATABASE = Nome do banco de dados
-    * POSTGRESQL_USER = Nome de Usuario do banco de dados
-    * POSTGRESQL_PASSWORD = Senha do do banco de dados
-    * POSTGRESQL_HOST = Host do banco de dados
-    * POSTGRESQL_PORT = Porta do banco de dados
+    * ALLOWED_HOSTS='*' **Habilita quem pode acessar a aplicação**
+    * DEBUG=True **Habilita a depuração do programa**
+    * POSTGRESQL_DATABASE='Tarefas' **Nome do banco de dados**
+    * POSTGRESQL_USER='User'**Nome de Usuario do banco de dados**
+    * POSTGRESQL_PASSWORD='123' **Senha do do banco de dados**
+    * POSTGRESQL_HOST='NomeDoServço' **Onde o bancode sera hospedado**
+    * POSTGRESQL_PORT='5432' **Porta do banco de dados**
 ### Desenvolvido por
 
 * GeoMK Desenvolvimento de Programas De Computador
