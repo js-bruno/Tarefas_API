@@ -23,10 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 't(@#7!$j2!_2kbb^kb126a#naxju9xmpa+cd!x@^z85f(+21ii'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ['DEBUG'] == 'True'
+DEBUG = 'True'
 
-ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS'].split(',')
-
+ALLOWED_HOSTS = ['*']
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Application definition
 
@@ -88,12 +87,8 @@ WSGI_APPLICATION = 'api_rest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ['POSTGRESQL_DATABASE'],
-        'USER': os.environ['POSTGRESQL_USER'],
-        'PASSWORD': os.environ['POSTGRESQL_PASSWORD'],
-        'HOST': os.environ['POSTGRESQL_HOST'],
-        'PORT': os.environ['POSTGRESQL_PORT']
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
 

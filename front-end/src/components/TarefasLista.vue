@@ -34,6 +34,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import axios from "axios";
 
 import TarefaSalvar from "./TarefaSalvar.vue";
@@ -54,13 +55,13 @@ export default {
     };
   },
   created() {
-    axios.get(process.env.VUE_APP_URLAPI).then(response => {
+    axios.get('http://localhost:8009/api/tarefas/').then(response => {
       this.tarefas = response.data;
     });
   },
   methods: {
     criarTarefa(tarefa) {
-      axios.post(process.env.VUE_APP_URLAPI, tarefa).then(response => {
+      axios.post("http://localhost:8009/api/tarefas/", tarefa).then(response => {
         this.tarefas.push(response.data);
         this.resetar();
       });
@@ -69,7 +70,7 @@ export default {
       const confirmar = window.confirm(`Realmente deseja deletar?`);
       if (confirmar) {
         axios
-          .delete(process.env.VUE_APP_URLAPI + `${tarefa.id}` + "/")
+          .delete("http://localhost:8009/api/tarefas/" + `${tarefa.id}` + "/")
           .then(response => {
             const indice = this.tarefas.findIndex(t => t.id === tarefa.id);
             this.tarefas.splice(indice, 1);
@@ -82,13 +83,14 @@ export default {
     },
     editarTarefa(tarefa) {
       axios
-        .put(process.env.VUE_APP_URLAPI + `${tarefa.id}` + "/", tarefa)
+        .put("http://localhost:8009/api/tarefas/" + `${tarefa.id}` + "/", tarefa)
         .then(response => {
           const indice = this.tarefas.findIndex(t => t.id === tarefa.id);
           this.tarefas.splice(indice, 1, tarefa);
           this.resetar();
         });
     },
+    
     resetar() {
       this.tarefaSelecionada = undefined;
       this.exibirFormulario = false;
