@@ -51,17 +51,17 @@ export default {
       tarefas: [],
       exibirFormulario: false,
       tarefaSelecionada: undefined,
-      versao: '1.0.0'
+      versao: '1.0.1'
     };
   },
   created() {
-    axios.get('http://localhost:8009/api/tarefas/').then(response => {
+    axios.get('http://localhost:8000/api/tarefas/').then(response => {
       this.tarefas = response.data;
     });
   },
   methods: {
     criarTarefa(tarefa) {
-      axios.post("http://localhost:8009/api/tarefas/", tarefa).then(response => {
+      axios.post("http://localhost:8000/api/tarefas/", tarefa).then(response => {
         this.tarefas.push(response.data);
         this.resetar();
       });
@@ -70,7 +70,7 @@ export default {
       const confirmar = window.confirm(`Realmente deseja deletar?`);
       if (confirmar) {
         axios
-          .delete("http://localhost:8009/api/tarefas/" + `${tarefa.id}` + "/")
+          .delete("http://localhost:8000/api/tarefas/" + `${tarefa.id}` + "/")
           .then(response => {
             const indice = this.tarefas.findIndex(t => t.id === tarefa.id);
             this.tarefas.splice(indice, 1);
@@ -83,7 +83,7 @@ export default {
     },
     editarTarefa(tarefa) {
       axios
-        .put("http://localhost:8009/api/tarefas/" + `${tarefa.id}` + "/", tarefa)
+        .put("http://localhost:8000/api/tarefas/" + `${tarefa.id}` + "/", tarefa)
         .then(response => {
           const indice = this.tarefas.findIndex(t => t.id === tarefa.id);
           this.tarefas.splice(indice, 1, tarefa);
