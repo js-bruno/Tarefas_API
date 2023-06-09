@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:12
+    container_name: todo-app-db
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: todo_app
+    volumes:
+      - todo_app_pgdata:/var/lib/postgresql/data
+    ports:
+      - 54329:5432
+
+volumes:
+  todo_app_pgdata:

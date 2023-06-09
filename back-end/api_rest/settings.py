@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,13 +24,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 't(@#7!$j2!_2kbb^kb126a#naxju9xmpa+cd!x@^z85f(+21ii'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+load_dotenv()
 DEBUG = os.environ['DEBUG'] == 'True'
 
 ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS'].split(',')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
